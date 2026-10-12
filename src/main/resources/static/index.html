@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+</head>
+<body>
+    <h2>Upload files</h2>
+
+    <form action="/upload" method="post"
+          enctype="multipart/form-data">
+        <div class="image-upload-container">
+            <div>
+            <label for="file1">Expected image:</label>
+            <input type="file" id="file1" name="expected_image" required>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="file2">Actual image:</label>
+            <input type="file" id="file2" name="actual_image" required>
+        </div>
+
+        </div>
+        
+
+        <br>
+
+        <input type="submit" value="Get Report">
+    </form>
+</body>
+</html>

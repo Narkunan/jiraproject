@@ -1,0 +1,21 @@
+services:
+  spring-app:
+    image: gradle:8.14-jdk17
+    container_name: spring-demo
+    working_dir: /app
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - gradle-cache:/home/gradle/.gradle
+    command: gradle --no-daemon bootRun
+    environment:
+      AWS_REGION: eu-north-1
+      BEDROCK_MODEL_ID: amazon.nova-lite-v1:0
+      AWS_ACCESS_KEY_ID: 
+      AWS_SECRET_ACCESS_KEY: 
+    stdin_open: true
+    tty: true
+
+volumes:
+  gradle-cache:
