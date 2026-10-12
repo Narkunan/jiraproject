@@ -12,8 +12,8 @@ services:
     environment:
       AWS_REGION: eu-north-1
       BEDROCK_MODEL_ID: amazon.nova-lite-v1:0
-      AWS_ACCESS_KEY_ID: 
-      AWS_SECRET_ACCESS_KEY: 
+      AWS_ACCESS_KEY_ID: AKIAYHXARWHZN2ZCY53G
+      AWS_SECRET_ACCESS_KEY: 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
     stdin_open: true
     tty: true
 
