@@ -9,11 +9,17 @@ services:
       - .:/app
       - gradle-cache:/home/gradle/.gradle
     command: gradle --no-daemon bootRun
-    environment:
-      AWS_REGION: eu-north-1
-      BEDROCK_MODEL_ID: amazon.nova-lite-v1:0
     stdin_open: true
     tty: true
+  mysql:
+    image: 'mysql:8.4.7'
+    environment:
+      - 'MYSQL_DATABASE=mydatabase'
+      - 'MYSQL_PASSWORD=secret'
+      - 'MYSQL_ROOT_PASSWORD=verysecret'
+      - 'MYSQL_USER=myuser'
+    ports:
+      - '3306:3306'
 
 volumes:
   gradle-cache:
